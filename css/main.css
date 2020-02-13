@@ -1,0 +1,86 @@
+
+/*
+Elements of the root of the document
+Used to declare variables to all scope
+*/
+:root {
+    --main-background-image: url("pics/concert.jpg");
+    --element-background-color: #46044F;
+
+    --main-text-color: #FFF;
+    
+    --main-distance-top: 14vh;
+    --distance-from-left: 17%;
+}
+
+.box-shadows{
+    -moz-box-shadow:    inset 3px 2px 10px rgba(255,255,255,.2), inset -3px -2px 20px rgba(0,0,0,.5);
+    -webkit-box-shadow: inset 3px 2px 10px rgba(255,255,255,.2), inset -3px -2px 20px rgba(0,0,0,.5);
+    box-shadow:         inset 5px 5px 10px rgba(255,255,255,.2), inset -3px -2px 20px rgba(0,0,0,.5); 
+}
+
+.box-inset-shadow{
+    -moz-box-shadow:    inset 5px 5px 10px rgba(0,0,0,.6), inset -3px -2px 20px rgba(255,255,255,.15);
+    -webkit-box-shadow: inset 5px 5px 10px rgba(0,0,0,.6), inset -3px -2px 20px rgba(255,255,255,.15);
+    box-shadow:         inset 5px 5px 10px rgba(0,0,0,.6), inset -3px -2px 20px rgba(255,255,255,.15);
+    
+}
+.main-element-space-top {
+    margin-top: var(--main-distance-top);
+} 
+
+.position-absolute {
+    position: relative;
+}
+
+/*
+APPLY TO HTML
+This is so we can use % for the height of the body element
+% is based off of the parent element except for the HTML element which can always accept %
+*/
+.height-width-hundered {
+    width:99.99%;
+    height: 99.99%;
+    padding: 0.05px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+.center-content {
+    align-content: center;
+}
+
+.display-inline{
+    display: inline;
+}
+
+.deny-font-resizeh3 {
+    font-size: 1.4vw;
+}
+.deny-font-resizeh2 {
+    font-size: 1.7vw;
+}
+.deny-font-resizeTxt {
+    font-size: 1.0vw;
+} 
+
+body {
+    
+    
+    background-image: url("../pics/concert.jpg");
+    background-color: linear-gradient(black, white);
+    
+    background-size: cover;
+    background-position: center;
+    
+    margin:0;
+    padding:0;
+
+    height: 99.5vh;
+    width: 99.5vw;
+
+    padding: 0.05px;
+
+}

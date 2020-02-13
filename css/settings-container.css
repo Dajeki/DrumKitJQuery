@@ -1,0 +1,62 @@
+div#control-box {
+
+    width: 17vw;
+    max-height: auto;
+
+    background-color: var(--element-background-color);
+    float: left;
+
+    border-radius: 2em;
+    padding-bottom: 4vh;
+
+    font-size: 100%;
+}
+
+#power-button{
+    margin-left: 6%;
+    margin-right: 6%;
+    width: 5vw;
+
+    max-height: 7vh;
+    
+}
+
+#sound-output{
+    width:13vw;
+    max-height:5vh;
+
+    padding-left: 1vw;
+    padding-right: 1vw;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+
+    
+    margin:auto;
+    
+}
+
+#music-note{
+    width: 5vw;
+    height: 8vh;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding: 0px;
+}
+
+.scaleable-space{
+    width: 100%;
+    height: 1em;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+}
+
+#top-element-control-box {
+    margin-top: .8vh;
+}
+
+#volume-selector
+{
+    width: 75%;
+}
