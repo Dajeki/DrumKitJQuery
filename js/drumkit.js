@@ -221,8 +221,7 @@ function preloadMedia( Media, typeData ){
 
 
 function drumResponse()
-{
-    
+{    
     let currentlyClicked = evt.target.id;
     $('#sound-output').html('Clicked: ' + currentlyClicked);
 }
@@ -237,7 +236,6 @@ function playSound(currentlyClickedAudio)
     
         audioSound = new Audio(currentlyClickedAudio['url']);
         audioSound.volume = volume;
-
 
         audioSound.play();
     }
@@ -400,11 +398,6 @@ function setupHandlers(){
     });
 }
 
-function clearTimeout() {
-    for (var i = setTimeout(function() {}, 0); i > 0; i--) {
-      window.clearTimeout(i);
-    }
-  }
 
 
 
