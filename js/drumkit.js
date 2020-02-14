@@ -2,6 +2,12 @@ let powerSwitch = true;
 let lastSoundPlayed = '';
 let volume = 50 / 100;
 
+const locationUnclicked = "pics/DrumButtons/clicked/";
+const preloadImagesURL = [locationUnclicked+"A.svg", locationUnclicked+"C.svg", locationUnclicked+"D.svg", 
+                          locationUnclicked+"E.svg", locationUnclicked+"G.svg", locationUnclicked+"H.svg",
+                          locationUnclicked+"S.svg", locationUnclicked+"V.svg", locationUnclicked+"Y.svg",
+                          "pics/Switch/power-button-off.svg" ];
+
 /*
     TODO Maybe use que system to stop quick clicks from one button to another from missing the the change back to unclick
     Alternative was not having any image because of regex causing wrong source from speed
@@ -184,19 +190,30 @@ const bankThree = {
 const drumkits = {dk1 : bankOne, dk2 : bankTwo, dk3 : bankThree};
 
 
-function preloadMedia( soundMedia ){
+function preloadMedia( Media, typeData ){
 
-    let soundObjects = Object.values(soundMedia);
+    let preloadObjects = Object.values(Media);
+    let mediaObjects; //to get the objects values from the objects in preloadObjects later
 
-    for (let sound = 0; sound < soundObjects.length; ++sound)
+    for (let data = 0; data < preloadObjects.length; ++data)
     {
-        
-        let drumObjects = Object.values(soundObjects[sound]);
-
-        for (let drum = 0; drum < drumObjects.length; ++drum)
+        if (typeData.toLowerCase() == 'audio')
         {
-            console.log("Loading audio at: " + drumObjects[drum].url)
-            new Audio(drumObjects[drum].url);           
+            mediaObjects = Object.values(preloadObjects[data]);
+            for (let drum = 0; drum < mediaObjects.length; ++drum)
+            {
+                console.log("Loading audio at: " + mediaObjects[drum].url);
+                new Audio(mediaObjects[drum].url);           
+            }
+        }
+        else if (typeData.toLowerCase() == 'img')
+        {          
+                /*
+                    Dont need the second loop here because the format for media is a single array instead of
+                    an array of object of objects like sounds are
+                */
+                console.log("Loading image at: " + Media[data]);
+                (new Image()).url = Media[data];        
         }
     }
 }
