@@ -235,17 +235,16 @@ function setupHandlers(){
         let currentlyClicked = evt.target.id;
 
         $('#sound-output').html(evt.data[dkSelection][currentlyClicked]['id']);
-
-        console.log($(this).attr("src"));
         
+        //play sound and display clicked button
         playSound(evt.data[dkSelection][currentlyClicked],currentlyClicked);
-        $(this).attr("src", $(this).attr("src").replace(/(unclicked)/, "clicked"));
+        $(this).attr("src", $(this).attr("src").replace(/(unclicked|clicked)/, "clicked"));
     });
 
     
     $('.drum-scale').mouseup(function(evt){
 
-            $(this).attr("src", $(this).attr("src").replace(/(clicked)/, "unclicked"));
+            $(this).attr("src", $(this).attr("src").replace(/(unclicked|clicked)/, "unclicked"));
     });
 
 
@@ -256,9 +255,6 @@ function setupHandlers(){
         let currentKeyPressed = evt.keyCode;
         let currentDrumPressed;
         let propertyName;
-
-        console.log("Went past 1st return false");
-        console.log("Evenet keycode in keypress: " + currentKeyPressed);
 
         let appropriateKey = false;
 
@@ -301,7 +297,7 @@ function setupHandlers(){
             $('#sound-output').html("MUTED");
         }
         
-            $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(unclicked)/, "clicked") )        
+            $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(unclicked|clicked)/, "clicked") )        
             playSound(evt.data[dkSelection][propertyName], currentKeyPressed);          //set it to true so it only happens once  
     });
 
@@ -334,7 +330,7 @@ function setupHandlers(){
 
                 appropriateKey = true;
           
-                $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(clicked)/, "unclicked") );
+                $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(unclicked|clicked)/, "unclicked") );
                 
                 //dont need to check more if reached this point
                 break;
