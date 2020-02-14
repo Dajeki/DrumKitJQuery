@@ -16,79 +16,67 @@
         <script>
             $('document').ready(function() {
 
-                setupHandlers();
-                
+                setupHandlers();          
                 preloadMedia(drumkits);
+                
 
             });
         </script>
 
     </head>
-    <header>
-        <!--HEADER GOES HERE-->       
-    </header>
-    <nav>
-        <!--NAVIGATION BAR GOES HERE-->   
-    </nav>
-    <body class="height-width-hundered">
-               
-            <main class="height-width-hundered">
+    <body class="height-width-hundered">        
+        <main class="height-width-hundered">
 
-                <div id="drumkit" class="main-element-space-top box-shadows"> 
+            <div id="drumkit" class="main-element-space-top box-shadows"> 
 
-                    <div class="drum-row">
-                        <img id="e-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/E.svg"/>
-                        <img id="y-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/Y.svg"/>
-                    </div>
-                    <div class="drum-row">
-                        <img id="a-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/A.svg"/>
-                        <img id="s-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/S.svg"/>
-                        <img id="d-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/D.svg"/>                      
-                        <img id="g-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/G.svg"/> 
-                        <img id="h-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/H.svg"/> 
-                    </div>
-                    <div class="drum-row">
-                        <img id="c-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/C.svg"/>
-                        <img id="v-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/V.svg"/>
-                    </div>
-
-                                           
-                        
-                        
-                    
+                <div class="drum-row">
+                    <img id="e-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/E.svg"/>
+                    <img id="y-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/Y.svg"/>
                 </div>
-                <div id="control-box" class="main-element-space-top center-text box-shadows">
-                    <h2 id="top-element-control-box" class="deny-font-resizeh2">Power</h2>
-                    <h3 class="display-inline deny-font-resizeh3">On</h3><img id="power-button" src="pics/Switch/power-button-on.svg"/><h3 class=" deny-font-resizeh3 display-inline">Off</h3>
-                    
-
-                    <span class="scaleable-space"></span>
-                    <h3 class="display-inline deny-font-resizeh3">Volume</h3>
-                    <span class="scaleable-space"></span>
-
-                    <input type="range" min="0" max="100" value="50" class="slider" id="volume-selector">
-
-                    <span class="scaleable-space"></span>
-                    <img id="music-note" class="" src="pics/music-note.svg"/>
-                    <span class="scaleable-space"></span>
-
-                    <div id="sound-output" class="box-inset-shadow deny-font-resizeTxt">&nbsp;</div>
-                    <span class="scaleable-space"></span>
-                    <span class="scaleable-space"></span>
-
-                    <select class="deny-font-resizeTxt" style="display: inline;" name="drumkit-select" id="drumkit-select">
-                        <option value="dk1">Havana</option>
-                        <option value="dk2">Classic</option>
-                        <option value="dk3">Adventure</option>
-                    </select>
-
+                <div class="drum-row">
+                    <img id="a-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/A.svg"/>
+                    <img id="s-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/S.svg"/>
+                    <img id="d-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/D.svg"/>                      
+                    <img id="g-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/G.svg"/> 
+                    <img id="h-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/H.svg"/> 
                 </div>
-                <p style="margin: auto; position:absolute; bottom:0; padding: 0px; background-color:#222629;">By Zachary A. K.</p>
-            </main>
-          
+                <div class="drum-row">
+                    <img id="c-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/C.svg"/>
+                    <img id="v-drum" class="position-absolute drum-scale" src="pics/DrumButtons/unclicked/V.svg"/>
+                </div>
+
+                                        
+                    
+                    
+                
+            </div>
+            <div id="control-box" class="main-element-space-top center-text box-shadows">
+                <h2 id="top-element-control-box" class="deny-font-resizeh2" style="margin-top: 1vh;">Power</h2>
+                <h3 class="display-inline deny-font-resizeh3">On</h3><img id="power-button" src="pics/Switch/power-button-on.svg"/><h3 class=" deny-font-resizeh3 display-inline">Off</h3>
+                
+
+                <span class="scaleable-space"></span>
+                <h3 class="display-inline deny-font-resizeh3">Volume</h3>
+                
+
+                <input type="range" min="0" max="100" value="50" class="slider" id="volume-selector">
+
+                <span class="scaleable-space"></span>
+                <img id="music-note" class="" src="pics/music-note.svg"/>
+                <span class="scaleable-space"></span>
+
+                <div id="sound-output" class="box-inset-shadow deny-font-resizeTxt">&nbsp;</div>
+                <span class="scaleable-space"></span>
+                <span class="scaleable-space"></span>
+
+                <select class="deny-font-resizeTxt" name="drumkit-select" id="drumkit-select">
+                    <option value="dk1">Havana</option>
+                    <option value="dk2">Classic</option>
+                    <option value="dk3">Adventure</option>
+                </select>
+
+            </div>
+            <p style="margin: auto; position:absolute; bottom:0; padding: 0px; background-color:#222629;">By Zachary A. K.</p>
+        </main>     
     </body>
-    <footer>
-        <!--FOOTER GOES HERE--> 
-        
-    </footer>
 </html>

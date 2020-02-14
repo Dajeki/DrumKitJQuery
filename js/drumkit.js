@@ -229,27 +229,35 @@ Function to call at the beggining of program to setup all the action handlers
 function setupHandlers(){
 
     //Click that will display the current drum name in the box and play the sound
-    $('.drum-scale').click(drumkits, function(evt){
+    $('.drum-scale').mousedown(drumkits, function(evt){
                         
         let dkSelection = $('#drumkit-select :selected').val();
         let currentlyClicked = evt.target.id;
 
         $('#sound-output').html(evt.data[dkSelection][currentlyClicked]['id']);
 
+        console.log($(this).attr("src"));
+        
         playSound(evt.data[dkSelection][currentlyClicked],currentlyClicked);
-    
+        $(this).attr("src", $(this).attr("src").replace(/(unclicked)/, "clicked"));
     });
 
+    
+    $('.drum-scale').mouseup(function(evt){
+
+            $(this).attr("src", $(this).attr("src").replace(/(clicked)/, "unclicked"));
+    });
 
 
     //keypress for the entire page that will display the current drum name in the box and play the sound
     $(document).keypress(drumkits, function(evt){
                         
-        var dkSelection = $('#drumkit-select :selected').val();
+        let dkSelection = $('#drumkit-select :selected').val();
         let currentKeyPressed = evt.keyCode;
         let currentDrumPressed;
         let propertyName;
 
+        console.log("Went past 1st return false");
         console.log("Evenet keycode in keypress: " + currentKeyPressed);
 
         let appropriateKey = false;
@@ -292,12 +300,9 @@ function setupHandlers(){
         {
             $('#sound-output').html("MUTED");
         }
-
-        $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(unclicked)/, "clicked") )
         
-        
-        playSound(evt.data[dkSelection][propertyName], currentKeyPressed);
-    
+            $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(unclicked)/, "clicked") )        
+            playSound(evt.data[dkSelection][propertyName], currentKeyPressed);          //set it to true so it only happens once  
     });
 
 
@@ -305,7 +310,7 @@ function setupHandlers(){
     //Click the power button to turn the sounds on and off.
     $(document).keyup(drumkits, function(evt){
         
-        var dkSelection = $('#drumkit-select :selected').val();
+        let dkSelection = $('#drumkit-select :selected').val();
         let currentKeyPressed = evt.key;
         let propertyName;
 
@@ -328,9 +333,9 @@ function setupHandlers(){
                 propertyName = propertyName[index];
 
                 appropriateKey = true;
-
-                $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(clicked)/, "unclicked") )
-
+          
+                $("#" + propertyName).attr("src", $("#" + propertyName).attr("src").replace(/(clicked)/, "unclicked") );
+                
                 //dont need to check more if reached this point
                 break;
             }
@@ -363,6 +368,12 @@ function setupHandlers(){
         
     });
 }
+
+function clearTimeout() {
+    for (var i = setTimeout(function() {}, 0); i > 0; i--) {
+      window.clearTimeout(i);
+    }
+  }
 
 
 

@@ -1,28 +1,33 @@
 div#control-box {
 
     width: 17vw;
-    max-height: auto;
+    max-height: fit-content;
+    min-height: fit-content;
 
     background-color: var(--element-background-color);
     float: left;
 
-    border-radius: 2em;
+    border-radius: 5px;
     padding-bottom: 4vh;
 
     font-size: 100%;
+    line-height: 2.3vh;
+    
+    font-size: 1vh * 1vw;
 }
 
-#power-button{
-    margin-left: 6%;
-    margin-right: 6%;
+#power-button {
+    margin-left: .5vw;
+    margin-right: .5vw;
     width: 5vw;
 
-    max-height: 7vh;
+    height: 5vh;
     
 }
 
-#sound-output{
+#sound-output {
     width:13vw;
+    min-height:10%;
     max-height:5vh;
 
     padding-left: 1vw;
@@ -35,7 +40,7 @@ div#control-box {
     
 }
 
-#music-note{
+#music-note {
     width: 5vw;
     height: 8vh;
     margin-left: auto;
@@ -44,19 +49,20 @@ div#control-box {
     padding: 0px;
 }
 
-.scaleable-space{
-    width: 100%;
-    height: 1em;
-    padding: 0px;
-    margin: 0px;
-    display: inline-block;
-}
-
 #top-element-control-box {
     margin-top: .8vh;
 }
 
-#volume-selector
-{
-    width: 75%;
+#volume-selector {
+    width: 10vw;
+    height : .5vh;
+    
+    
+}
+
+#drumkit-select {
+    display: inline-block;
+    min-height: fit-content;
+    width:fit-content; 
+    height: fit-content;
 }
