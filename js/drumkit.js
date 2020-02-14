@@ -2,6 +2,11 @@ let powerSwitch = true;
 let lastSoundPlayed = '';
 let volume = 50 / 100;
 
+/*
+    TODO Maybe use que system to stop quick clicks from one button to another from missing the the change back to unclick
+    Alternative was not having any image because of regex causing wrong source from speed
+    Probably caused from same issue as above mentioned
+*/
 
 //SOUND BANKS
 const bankOne = {
@@ -234,8 +239,16 @@ function setupHandlers(){
         let dkSelection = $('#drumkit-select :selected').val();
         let currentlyClicked = evt.target.id;
 
-        $('#sound-output').html(evt.data[dkSelection][currentlyClicked]['id']);
-        
+        //check power switch
+        if (powerSwitch == true)
+        {
+            $('#sound-output').html(evt.data[dkSelection][currentlyClicked]['id']);
+        }
+        else
+        {
+            $('#sound-output').html("MUTED");
+        }
+
         //play sound and display clicked button
         playSound(evt.data[dkSelection][currentlyClicked],currentlyClicked);
         $(this).attr("src", $(this).attr("src").replace(/(unclicked|clicked)/, "clicked"));
