@@ -254,10 +254,15 @@ function setupHandlers(){
         $(this).attr("src", $(this).attr("src").replace(/(unclicked|clicked)/, "clicked"));
     });
 
-    
-    $('.drum-scale').mouseup(function(evt){
 
+    //Return the buttons back to unclicked for either of these events.
+    $('.drum-scale').mouseup(function(evt){
             $(this).attr("src", $(this).attr("src").replace(/(unclicked|clicked)/, "unclicked"));
+    });
+
+
+    $('.drum-scale').mouseout(function(evt){
+        $('.drum-scale').each(function() { $(this).attr("src", $(this).attr("src").replace(/(unclicked|clicked)/, "unclicked")); });
     });
 
 
